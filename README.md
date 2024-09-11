@@ -81,6 +81,10 @@ len(df.columns)
 # Write output to disk
 df.write.csv('/path/to/your/output/file')
 
+# Write output to current directory
+df_pd=df.toPandas()
+df_pd.to_csv("df.csv",header=True,index=False,sep="|",encoding="utf-8")
+
 # Get results (WARNING: in-memory) as list of PySpark Rows
 df = df.collect()
 
