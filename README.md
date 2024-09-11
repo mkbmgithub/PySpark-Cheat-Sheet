@@ -76,6 +76,7 @@ df.dtypes
 
 # Get schema
 df.schema
+df.printSchema()
 
 # Get row count
 df.count()
