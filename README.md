@@ -49,13 +49,7 @@ df = spark.read.csv('/path/to/your/input/file')
 
 ```python
 # Show a preview
-df.show()
-
-# Show complete values
-df.show(5,truncate=False)
-
-# Show in vertical format
-df.show(5,vertical=True)
+df.show(5,truncate=False,vertical=True)
 
 # Show preview of first / last n rows
 df.head(5)
