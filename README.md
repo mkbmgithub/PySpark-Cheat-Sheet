@@ -49,7 +49,7 @@ df = spark.read.csv('/path/to/your/input/file')
 
 ```python
 # Show a preview
-df.show()
+df.show(5,truncate=False,vertical=True)
 
 # Show preview of first / last n rows
 df.head(5)
@@ -70,6 +70,7 @@ df.dtypes
 
 # Get schema
 df.schema
+df.printSchema()
 
 # Get row count
 df.count()
@@ -79,6 +80,10 @@ len(df.columns)
 
 # Write output to disk
 df.write.csv('/path/to/your/output/file')
+
+# Write output to current directory
+df_pd=df.toPandas()
+df_pd.to_csv("df.csv",header=True,index=False,sep="|",encoding="utf-8")
 
 # Get results (WARNING: in-memory) as list of PySpark Rows
 df = df.collect()
